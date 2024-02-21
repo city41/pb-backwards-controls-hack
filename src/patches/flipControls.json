@@ -12,13 +12,13 @@
       "move.b #0, D6 ; initialize our fake input with zero",
 
       ";;;; check for right input, if so, switch it over to be on left",
-      "btst #3, D6 ; first, is right even pressed?",
+      "btst #3, D0 ; first, is right even pressed?",
       "beq checkLeft ; if not, let's go check left",
       "move.b #4, D6 ; put a left input into D6",
       "bra reformInput ; skip the left check",
 
       "checkLeft:",
-      "btst #2, D6 ; first, is left even pressed?",
+      "btst #2, D0 ; first, is left even pressed?",
       "beq reformInput ; no, then nothing to flip",
       "move.b #8, D6 ; put a right input into D6",
 
